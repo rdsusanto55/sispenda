@@ -1,0 +1,10 @@
+# Mengaktifkan mod_rewrite
+RewriteEngine On
+
+# Menyembunyikan ekstensi .php di URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)$ $1.php [L,QSA]
+
+# Menonaktifkan penelusuran direktori
+Options -Indexes
